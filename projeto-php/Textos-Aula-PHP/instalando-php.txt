@@ -1,0 +1,2 @@
+Download do AMP Server
+Para aprender PHP você precisa transformar seu computador em um pequeno Web Server. Para isso, deve instalar a versão de um AMP (Apache+MySQL+PHP) à sua escolha. Existem várias opções no mercado, indicamos aqui uma versão para cada Sistema Operacional (Windows, Linux ou Mac).

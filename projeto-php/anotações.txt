@@ -1,0 +1,60 @@
+Criar um CRUD de cliente em php usando:
+
+PHP como linguagem;
+PDO para conectar com o banco;
+MYSQL como banco;
+Boostrap como frontend; - ok
+Padrão MVC;
+O back deve trabalhar com rotas;
+
+/----------------------------------------------------------------------------------------------------------------------------
+CRUD é um acrônimo utilizado na área de desenvolvimento de software que se refere a quatro operações básicas que podem ser 
+realizadas em um sistema de gerenciamento de banco de dados ou em qualquer outra aplicação que envolva a manipulação de dados.
+As letras do acrônimo correspondem às seguintes operações:
+
+Create (C): criação de novos registros ou objetos no banco de dados.
+Read (R): leitura ou recuperação de registros existentes no banco de dados.
+Update (U): atualização ou modificação dos registros existentes no banco de dados.
+Delete (D): exclusão dos registros existentes no banco de dados.
+
+/----------------------------------------------------------------------------------------------------------------------------
+
+O padrão MVC é amplamente utilizado no desenvolvimento de aplicações em PHP. 
+Aqui está uma descrição de como o padrão MVC pode ser implementado em uma aplicação PHP:
+
+1. Model (Modelo): O modelo em uma aplicação PHP é responsável por representar a camada de dados e a lógica de negócios. 
+le pode ser implementado através de classes que interagem com o banco de dados ou outras fontes de dados. 
+O modelo é responsável por recuperar, armazenar, atualizar e excluir dados, bem como aplicar regras de validação 
+e lógica de negócios relacionadas aos dados.
+
+2. View (Visualização): A visualização é responsável por apresentar a interface do usuário ao usuário final. 
+No contexto do PHP, as visualizações geralmente são arquivos de templates que contêm HTML, 
+juntamente com código PHP incorporado ou tags especiais que permitem a exibição dinâmica de dados. 
+As visualizações são usadas para renderizar os dados do modelo e exibi-los para o usuário.
+
+3. Controller (Controlador): O controlador age como um intermediário entre a visualização e o modelo. 
+Ele recebe as solicitações do usuário e decide como lidar com elas. No PHP, 
+os controladores geralmente são implementados como funções ou métodos em classes que lidam com o roteamento e a lógica de 
+manipulação das solicitações. O controlador recebe a entrada do usuário, processa-a, 
+interage com o modelo para obter ou modificar os dados necessários e, em seguida, 
+seleciona a visualização apropriada para exibir os resultados.
+
+Em uma aplicação PHP seguindo o padrão MVC, a estrutura de diretórios geralmente é organizada da seguinte maneira:
+
+- A pasta "models" contém as classes do modelo que interagem com o banco de dados ou outras fontes de dados.
+- A pasta "views" contém os arquivos de visualização (templates) que são responsáveis pela exibição dos dados.
+- A pasta "controllers" contém as classes ou arquivos que agem como controladores, 
+processando as solicitações do usuário e interagindo com o modelo e a visualização.
+
+Além desses componentes, é comum ter uma camada adicional chamada de "rota" (ou "router"), 
+que é responsável por direcionar as solicitações HTTP para o controlador apropriado com base na URL ou outros critérios. 
+Essa camada é responsável por mapear URLs para ações do controlador correspondente.
+
+Ao seguir o padrão MVC em uma aplicação PHP, você obtém uma separação clara das responsabilidades, 
+o que facilita a manutenção, a escalabilidade e a reutilização do código. Além disso, 
+permite que diferentes desenvolvedores trabalhem em paralelo em diferentes partes da aplicação 
+sem interferir um no trabalho do outro.
+
+/----------------------------------------------------------------------------------------------------------------------------
+Declarando vareavel
+$mysql
