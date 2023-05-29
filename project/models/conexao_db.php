@@ -14,58 +14,86 @@ try {
 }
 
 // ------------------------------------Inserção de dados ------------------------------------
-$res = $conn->prepare("INSERT INTO users(name, email, age) VALUES (:name, :email, :age)");
+function insert_user($name, $email, $tel){
 
-// Valores de insert 
-//$res->bindValue(":name","Leonardo");
-//$res->bindValue(":email","leo@gmail.com");
-//$res->bindValue(":age","25");
+    global $conn;
 
-// Executando inserção
-//$res->execute();
+    $res = $conn->prepare("INSERT INTO users(name, email, telephone) VALUES (:name, :email, :tel)");
 
-//echo "Dados inseridos com sucesso.";
+    // Valores de insert 
+    $res->bindValue(":name","Leonardo");
+    $res->bindValue(":email","leo@gmail.com");
+    $res->bindValue(":tel","25");
+
+    // Executando inserção
+    $res->execute();
+
+    echo "Dados inseridos com sucesso.";
+}
+
 
 // ------------------------------------ Delete ------------------------------------
-$cm = $conn->prepare("DELETE FROM users WHERE id = :id");
-$id = 3;
+function delet_user($id){
+    
+    global $conn;
 
-// Passando o valor da vareavel para id
-$cm->bindValue(":id", $id);
-// Executando delete
-//$cm->execute();
+    $cm = $conn->prepare("DELETE FROM users WHERE id = :id");
+    $id = 3;
 
-// Printando
-//echo "Dados apagados com sucesso!";
+    // Passando o valor da vareavel para id
+    $cm->bindValue(":id", $id);
+    // Executando delete
+    $cm->execute();
 
+    // Printando
+    echo "Dados apagados com sucesso!";
+}
 // ------------------------------------ Update ------------------------------------
-//$alt = $conn->prepare("UPDATE users SET email = :e WHERE id = :id");
+function update_user($id, $email){
+    
+    global $conn;
 
-//$alt->bindValue(":e", "leonardoaugusto@gmail.com");
-//$alt->bindValue(":id",2);
-//$alt->execute();
+    $alt = $conn->prepare("UPDATE users SET email = :e WHERE id = :id");
+
+    // Dados a serem alterados
+    $alt->bindValue(":e", $email);
+
+    // Passando o valor da vareavel para id
+    $alt->bindValue(":id",$id);
+
+    // Executando update
+    $alt->execute();
+}
+
+
 
 // ------------------------------------ Select ------------------------------------
-$select = $conn->prepare("SELECT * FROM users WHERE id = :id");
-$select->bindValue(":id", 2);
-$select->execute();
 
-// Transformando as informações em array
-// Selecionando um retorno e formatando o retorno
-$result = $select->fetch(PDO::FETCH_ASSOC);
-// Selecionando diversos registros
-//$select->fetchAll();
+function select_user($id){
 
-foreach ($result as $key => $value) {
-    echo $key.":".$value."<br>";
+    global $conn;
+
+    $select = $conn->prepare("SELECT * FROM users WHERE id = :id");
+    $select->bindValue(":id",$id);
+    $select->execute();
+
+    // Transformando as informações em array
+    // Selecionando um retorno e formatando o retorno
+    $result = $select->fetch(PDO::FETCH_ASSOC);
+
+    foreach ($result as $key => $value) {
+        echo $key.":".$value."<br>";
+    }
 }
+
+select_user(4);
 
 
 // ------------------------------------ Select all ------------------------------------
 
 function select_all(){
 
-    global $conn
+    global $conn;
 
     $selectall = $conn->prepare("SELECT * FROM users ");
     $selectall->execute();
@@ -79,12 +107,14 @@ function select_all(){
         foreach($resultall as $row){
 
             // imprimir na tela
-            echo "- ID:" . $row["id"]. "- Nome:". $row["name"]. "- E-mail:" . $row["email"] . "- Idade:" . $row["age"] . "<br>";}
+            echo "- ID:" . $row["id"]. "- Nome:". $row["name"]. "- E-mail:" . $row["email"] . "- Telefone:" . $row["telephone"] . "<br>";}
         } 
     else {
-            echo "Nenhum resultado encontrado.";
+            return "Nenhum resultado encontrado.";
     }
 
     // Fecha a conexão com o banco de dados
     $conn = null;
 }
+
+select_all();

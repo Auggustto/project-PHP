@@ -1,5 +1,15 @@
+<?php
+
+//require_once 'search.php';
+set_include_path('search.php');
+
+//$p = new user("users", "localhost", "root", "");
+$u = new user_all("users", "localhost", "root", "");
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -26,7 +36,29 @@
             <button type="submit" class="btn btn-primary">Salvar</button>
             <button type="button" class="btn btn-secondary" id="cancelBtn">Cancelar</button>
         </form>
+        <section id="section_list">
+        <table class="table mt-4">
 
+            <?php
+            $data = $p->search_values();
+            var_dump($data)
+            ?>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                </tr>
+            </thead>
+            <tbody id="clientTableBody">
+
+                <!-- Aqui serão adicionadas as linhas da tabela dinamicamente -->
+
+            </tbody>
+        </table>
+        </section>
     </div>
 </body>
 
