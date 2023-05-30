@@ -1,14 +1,3 @@
-<?php
-
-//require_once "search.php";
-set_include_path('search.php');
-
-//require "search.php";
-//$p = new user("users", "localhost", "root", "");
-$connection_database = new user_all("localhost","project","root","");
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -35,35 +24,15 @@ $connection_database = new user_all("localhost","project","root","");
                 <label for="email">Email:</label>
                 <input type="email" class="form-control" id="email" required>
             </div>
+            <div class="form-group">
+                <label for="tel">Telefone:</label>
+                <input type="tel" class="form-control" id="telefone" required>
+            </div>
             <button type="submit" class="btn btn-primary">Salvar</button>
             <button type="button" class="btn btn-secondary" id="cancelBtn">Cancelar</button>
         </form>
-        <section id="section_list">
-        <table class="table mt-4">
-
-            <?php
-            $data = $connection_database->search_values();
-            var_dump($data)
-            ?>
-
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Telefone</th>
-                </tr>
-            </thead>
-            <tbody id="clientTableBody">
-
-                <!-- Aqui serão adicionadas as linhas da tabela dinamicamente -->
-
-            </tbody>
-        </table>
-        </section>
     </div>
 </body>
-
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script>

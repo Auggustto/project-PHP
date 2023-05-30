@@ -118,3 +118,21 @@ function select_all(){
 }
 
 select_all();
+
+
+
+
+
+// try {
+//             $this->pdo = new PDO("mysqli:dbname=" .$dbname .";host=" .$host, $user, $password);
+//         } 
+//         catch (PDOException $e) {
+//             echo "Erro ao conectar com o banco de dados: " . $e->getMessage();
+//             // Caso de erro para o codigo
+//             exit();
+//         }
+//         catch (Exception $e) {
+//             echo "Erro generico: " . $e->getMessage();
+//             // Caso de erro para o codigo
+//             exit();
+//         }
