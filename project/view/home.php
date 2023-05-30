@@ -1,10 +1,11 @@
 <?php
 
-//require_once 'search.php';
+//require_once "search.php";
 set_include_path('search.php');
 
+//require "search.php";
 //$p = new user("users", "localhost", "root", "");
-$u = new user_all("users", "localhost", "root", "");
+$connection_database = new user_all("localhost","project","root","");
 
 ?>
 
@@ -41,7 +42,7 @@ $u = new user_all("users", "localhost", "root", "");
         <table class="table mt-4">
 
             <?php
-            $data = $p->search_values();
+            $data = $connection_database->search_values();
             var_dump($data)
             ?>
 
