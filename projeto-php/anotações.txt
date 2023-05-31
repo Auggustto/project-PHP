@@ -1,10 +1,10 @@
 Criar um CRUD de cliente em php usando:
 
-PHP como linguagem;
-PDO para conectar com o banco;
-MYSQL como banco;
+PHP como linguagem; ok
+PDO para conectar com o banco; ok
+MYSQL como banco; - ok
 Boostrap como frontend; - ok
-Padrão MVC;
+Padrão MVC;- ok
 O back deve trabalhar com rotas;
 
 /----------------------------------------------------------------------------------------------------------------------------
