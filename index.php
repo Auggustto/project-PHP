@@ -3,6 +3,8 @@
 require_once 'app/core/core.php';
 require_once 'app/controller/Homecontroller.php';
 require_once 'app/controller/ErroController.php';
+require_once 'app/lib/database/conecction.php';
+require_once 'app/models/search_db.php';
 
 $template = file_get_contents('app/view/home.html');
 
@@ -20,5 +22,5 @@ ob_start();
 ob_end_clean();
 
 // Carregand o template que tem o conteudo GTML
-$tplPronto = str_replace('{{CRUD de Clientes}}', $saida, $template);
+$tplPronto = str_replace('{{}}', $saida, $template);
 echo $tplPronto;

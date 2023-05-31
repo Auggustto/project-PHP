@@ -11,7 +11,7 @@ class core
         if (isset($urlGet['pagina']))
         {
             // Tratando a URL 
-            $controller = ucfirst($urlGet['pagina'].'Controller');
+            $controller = ucfirst($urlGet['pagina'] . 'Controller');
         } else {
             $controller = 'Homecontroller';
         }

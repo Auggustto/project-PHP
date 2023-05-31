@@ -5,6 +5,7 @@ class HomeController
     // Exibindo a mengasem HOME
     public function index()
     {
-        echo 'Home';
+        // Chamando o metodo search_db
+        search::select_all();
     }
 }
