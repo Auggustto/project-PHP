@@ -5,7 +5,15 @@ class HomeController
     // Exibindo a mengasem HOME
     public function index()
     {
-        // Chamando o metodo search_db
-        search::select_all();
+        try 
+        {
+            // Chamando o metodo search_db
+            $dataAll = search::select_all();
+            var_dump($dataAll);
+        } 
+        catch (Exception $e)
+        {
+            echo $e->getMessage();
+        }
     }
 }
